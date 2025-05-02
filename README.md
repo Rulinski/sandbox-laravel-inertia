@@ -1,3 +1,26 @@
+## Install
+```sh
+laravel new inertia
+#no starter kit
+#phpunit
+#sqlite
+#npm i: no
+
+cd inertia
+
+composer require laravel/breeze --dev
+php artisan breeze:install
+#React with Inertia
+#none
+#phpunit
+
+```
+
+## Useful links:
+
+[course: building-a-website-with-laravel-react-js-and-inertia](https://www.linkedin.com/learning/building-a-website-with-laravel-react-js-and-inertia/introduction-to-inertia-js)
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
