@@ -2,13 +2,8 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
-Route::get('/', function () {
-    return Inertia::render('Home');
-})->name('home');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -20,7 +15,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('posts', PostController::class);
+Route::resource('posts', PostController::class)->except(['index']);
+Route::get('/', [PostController::class, 'index'])->name('home');
 Route::inertia('about', 'About')->name('about');
 
 require __DIR__.'/auth.php';
