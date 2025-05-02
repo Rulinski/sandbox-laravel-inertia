@@ -34,7 +34,7 @@ class PostController extends Controller
     {
         Post::create($request->validated());
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('message', 'Post created successfully.');
     }
 
     /**
@@ -60,7 +60,7 @@ class PostController extends Controller
     {
         $post->update($request->validated());
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('message', 'Post updated successfully.');
     }
 
     /**
@@ -70,6 +70,6 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('message', 'Post deleted successfully.');
     }
 }
