@@ -1,6 +1,10 @@
-import {Link} from "@inertiajs/react";
+import {Link, router} from "@inertiajs/react";
 
 export function Index({posts}) {
+
+    function deletePost(id) {
+        router.delete(route("posts.destroy", id));
+    }
 
     return (
         <div>
@@ -35,6 +39,15 @@ export function Index({posts}) {
                         </Link>
 
                         <button
+                            onClick={() => {
+                                if (
+                                    confirm(
+                                        "Are you sure you want to delete this post?"
+                                    )
+                                ) {
+                                    deletePost(post.id)
+                                }
+                            }}
                             className="px-4 py-2 text-white bg-gray-400 rounded-md hover:bg-gray-500 cursor-pointer">
                             Delete Post
                         </button>
